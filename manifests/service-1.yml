@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: "aks101cluster-a946"
+    labels:
+        app: "aks101cluster-a946"
+spec:
+    type: LoadBalancer
+    ports:
+    - port: 8088
+      targetPort: 8088
+      protocol: TCP
+      name: http
+    selector:
+        app: "aks101cluster-a946"
