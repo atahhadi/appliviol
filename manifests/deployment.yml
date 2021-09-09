@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "aks101cluster-8631"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "aks101cluster-8631"
+  template:
+    metadata:
+      labels:
+        app: "aks101cluster-8631"
+    spec:
+      containers:
+        - name: "aks101cluster-8631"
+          image: "testregistrysal.azurecr.io/aks101cluster"
+          ports:
+          - containerPort: 8088
